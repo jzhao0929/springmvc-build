@@ -1,6 +1,7 @@
 package com.aostar.dao;
 
 import com.aostar.pojo.BookPojo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public interface BookMapper {
       * @author: 2020-6-1 21:25 jzhao
       * @reviser and other massage:
       */
-    int deleteBookById(String id);
+    int deleteBookById(@Param("id") String id);
 
     /**
       * @Description: 更新书籍信息
@@ -45,7 +46,7 @@ public interface BookMapper {
       * @author: 2020-6-2 8:47 jzhao
       * @reviser and other massage:
       */
-    BookPojo selectBookById(String id);
+    BookPojo selectBookById(@Param("id") String id);
 
     /**
       * @Description: 查询所有书籍
@@ -55,5 +56,14 @@ public interface BookMapper {
       * @reviser and other massage:
       */
     List<BookPojo> selectBookList();
+
+    /**
+      * @Description: 根据书籍名称查询书籍
+      * @params: [bookName]
+      * @return: java.util.List<com.aostar.pojo.BookPojo>
+      * @author: 2020-6-3 0:32 jzhao
+      * @reviser and other massage: 
+      */
+    List<BookPojo> selectBookListByBookName(@Param("bookName") String bookName);
 
 }

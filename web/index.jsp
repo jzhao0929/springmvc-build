@@ -21,7 +21,7 @@
 </head>
 <body>
 <h3>
-  <a href="${pageContext.request.contextPath}/book/bookList">进入书籍页面</a>
+  <a href="${pageContext.request.contextPath}/book/bookList" target="_self">进入书籍页面</a>
 </h3>
 </body>
 </html>

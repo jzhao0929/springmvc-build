@@ -54,4 +54,13 @@ public interface BookService {
      * @reviser and other massage:
      */
     BookPojo selectBookById(String id);
+
+    /**
+     * @Description: 根据书籍名称查询书籍
+     * @params: [bookName]
+     * @return: java.util.List<com.aostar.pojo.BookPojo>
+     * @author: 2020-6-3 0:32 jzhao
+     * @reviser and other massage:
+     */
+    List<BookPojo> selectBookListByBookName(String bookName);
 }

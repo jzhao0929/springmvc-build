@@ -19,12 +19,13 @@
 
         <div class="row">
             <div class="col-md-4 column">
-                <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/addBookPage">新增书籍</a>
+                <a class="btn btn-info" href="${pageContext.request.contextPath}/book/addBookPage">新增书籍</a>
             </div>
-            <div class="col-md-4 column">
+            <div class="col-md-8 column">
                 <%--查询书籍--%>
-                <form action="" method="">
-                    <input type="text" placeholder="请输入要输入">
+                <form action="${pageContext.request.contextPath}/book/bookListByBookName" method="" style="float: right" class="form-inline">
+                    <input type="text" class="form-control" name="bookName" placeholder="请输入书籍名称">
+                    <input type="submit" value="查询" class="btn btn-info">
                 </form>
             </div>
         </div>
@@ -35,7 +36,6 @@
             <table class="table table-hover table-striped">
                 <thead>
                     <tr>
-                        <th>书籍编号</th>
                         <th>书籍名称</th>
                         <th>书籍数量</th>
                         <th>书籍描述</th>
@@ -46,7 +46,6 @@
                 <tbody>
                     <c:forEach var="bookPojo" items="${list}">
                         <tr>
-                            <td>${bookPojo.id}</td>
                             <td>${bookPojo.bookName}</td>
                             <td>${bookPojo.bookCount}</td>
                             <td>${bookPojo.detail}</td>

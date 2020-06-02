@@ -22,6 +22,16 @@ public class BookController {
     @Qualifier("BookServiceImpl")
     private BookService bookService;
 
+    @RequestMapping("/bookListByBookName")
+    public String selectBookListByBookName(String bookName,Model model){
+        if("".equals(bookName)){
+            bookName=null;
+        }
+        List<BookPojo> books = bookService.selectBookListByBookName(bookName);
+        model.addAttribute("list",books);
+        return "bookList";
+    }
+
     /**
       * @Description:
       * @params: []

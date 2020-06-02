@@ -51,4 +51,16 @@
             from book
         </select>
 
+        <select id="selectBookListByBookName" resultType="bookPojo" >
+            select
+              *
+            from book
+            <where>
+                <if test="bookName!=null">
+                    BOOK_NAME=#{bookName}
+                </if>
+
+            </where>
+        </select>
+
 </mapper>
