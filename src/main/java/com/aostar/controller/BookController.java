@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import java.util.List;
 
 /**
@@ -29,7 +28,7 @@ public class BookController {
       * @author: 2020-6-1 21:53 jzhao
       * @reviser and other massage:
       */
-    @RequestMapping("bookList")
+    @RequestMapping("/bookList")
     public String selectBookList(Model model){
         List<BookPojo> books = bookService.selectBookList();
         model.addAttribute("list",books);
