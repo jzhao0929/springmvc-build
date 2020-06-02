@@ -1,2 +1,3 @@
 # springmvc-build
-SpringMVC基本架构
+**使用IDEA开发**
+> Spring+SpringMVC+Mybatis
