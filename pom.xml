@@ -69,6 +69,7 @@
         </dependency>
     </dependencies>
 
+    <!--maven静态资源过滤问题-->
     <build>
         <resources>
             <resource>
