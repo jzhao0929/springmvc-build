@@ -1,7 +1,6 @@
 import com.aostar.pojo.BookPojo;
 import com.aostar.service.BookService;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
