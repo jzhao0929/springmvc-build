@@ -11,20 +11,32 @@
     <context:property-placeholder location="classpath:jdbc.properties"/>
 
     <!--2.连接池-->
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="driverClassName" value="${driver}" />
-        <property name="url" value="${url}" />
-        <property name="username" value="${username}" />
-        <property name="password" value="${password}" />
-        <!--maxActive: 最大连接数量 -->
-        <property name="maxActive" value="20" />
-        <!--initialSize: 初始化连接 -->
-        <property name="initialSize" value="5" />
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <!-- 基本属性 url、user、password -->
+        <property name="driverClassName" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+        <!-- 配置监控统计拦截的filters -->
+        <property name="filters" value="stat"/>
         <!--设置为让连接池知道数据库已经断开了，并且自动测试连接查询-->
         <property name="validationQuery" value="SELECT 1" />
         <property name="testOnBorrow" value="true" />
         <property name="testOnReturn" value="false" />
         <property name="testWhileIdle" value="true" />
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="maxActive" value="20"/>
+        <property name="initialSize" value="1"/>
+        <property name="minIdle" value="1"/>
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="60000"/>
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="300000"/>
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="maxOpenPreparedStatements" value="20"/>
     </bean>
 
     <!--3.sqlSessionFactory-->
@@ -32,6 +44,12 @@
         <property name="dataSource" ref="dataSource" />
         <!--绑定Mybatis的配置文件-->
         <property name="configLocation" value="mybatis-config.xml" />
+        <!--自 1.3.0 版本开始，新增的 configuration 属性能够在没有对应的 MyBatis XML 配置文件的情况下，开启驼峰映射。-->
+        <!--<property name="configuration">-->
+            <!--<bean class="org.apache.ibatis.session.Configuration">-->
+                <!--<property name="mapUnderscoreToCamelCase" value="true"/>-->
+            <!--</bean>-->
+        <!--</property>-->
     </bean>
 
     <!--4.配置dao接口扫描包，动态的实现Dao接口可以注入到Spring容器中！-->

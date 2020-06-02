@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aostar.dao.BookMapper">
+        <insert id="saveBook" parameterType="bookPojo">
+            insert into book (
+             ID,BOOK_NAME,BOOK_COUNT,DETAIL,CREATE_TIME,CREATE_USER,UPDATE_TIME,UPDATE_USER)
+            values (
+            #{id,jdbcType=VARCHAR},
+            #{bookName,jdbcType=VARCHAR},
+            #{bookCount,jdbcType=INTEGER},
+            #{detail,jdbcType=VARCHAR},
+            #{createTime,jdbcType=TIMESTAMP},
+            #{createUser,jdbcType=VARCHAR},
+            #{updateTime,jdbcType=TIMESTAMP},
+            #{updateUser,jdbcType=VARCHAR}
+            )
+        </insert>
+
+        <delete id="deleteBookById" >
+            delete from book
+            where id = #{id,jdbcType=VARCHAR}
+        </delete>
+
+        <update id="updateById" parameterType="bookPojo" >
+            update book
+            set
+              BOOK_NAME = #{bookName,jdbcType=VARCHAR},
+              BOOK_COUNT = #{bookCount,jdbcType=VARCHAR},
+              detail = #{detail,jdbcType=VARCHAR},
+              exam_level = #{examLevel,jdbcType=VARCHAR},
+              department_push = #{departmentPush,jdbcType=VARCHAR},
+              CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+              CREATE_USER = #{createUser,jdbcType=VARCHAR},
+              UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+              UPDATE_USER = #{updateUser,jdbcType=VARCHAR}
+            where ID = #{id,jdbcType=VARCHAR}
+         </update>
+
+        <select id="selectBookById" resultType="bookPojo" >
+            select
+              *
+            from book
+            where ID = #{id,jdbcType=VARCHAR}
+        </select>
+
+        <select id="selectBookList" resultType="bookPojo" >
+            select
+              *
+            from book
+        </select>
+
+</mapper>
