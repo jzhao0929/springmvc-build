@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @Description 用户业务接口
+ * @Description 书籍业务接口
  * @Author jzhao
  * @Date 2020-6-1 18:41
  **/
