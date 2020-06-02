@@ -25,4 +25,24 @@ public class BookServiceImpl implements BookService {
     public List<BookPojo> selectBookList() {
         return bookMapper.selectBookList();
     }
+
+    @Override
+    public int saveBook(BookPojo book) {
+        return bookMapper.saveBook(book);
+    }
+
+    @Override
+    public int deleteBookById(String id) {
+        return bookMapper.deleteBookById(id);
+    }
+
+    @Override
+    public int updateBook(BookPojo bookPojo) {
+        return bookMapper.updateBook(bookPojo);
+    }
+
+    @Override
+    public BookPojo selectBookById(String id) {
+        return bookMapper.selectBookById(id);
+    }
 }
