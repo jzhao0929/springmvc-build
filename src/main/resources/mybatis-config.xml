@@ -5,9 +5,10 @@
 <configuration>
     <!-- 开启驼峰映射 ，为自定义的SQL语句服务-->
     <!--设置启用数据库字段下划线映射到java对象的驼峰式命名属性，默认为false-->
+    <!--指定 MyBatis 所用日志的具体实现-->
     <settings>
+        <setting name="logImpl" value="LOG4J "/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
-        <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>
 
     <!--配置数据源，交给Spring管理-->
@@ -19,7 +20,5 @@
     <mappers>
         <mapper class="com.aostar.dao.BookMapper" />
     </mappers>
-
-
 
 </configuration>
