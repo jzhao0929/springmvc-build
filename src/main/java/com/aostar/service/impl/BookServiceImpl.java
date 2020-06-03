@@ -1,11 +1,13 @@
 package com.aostar.service.impl;
 
+import com.aostar.UtilTools.UUIDTool;
 import com.aostar.dao.BookMapper;
 import com.aostar.pojo.BookPojo;
 import com.aostar.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @Description 书籍业务接口实现
@@ -28,6 +30,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public int saveBook(BookPojo book) {
+        book.setId(UUIDTool.getUUID());
         return bookMapper.saveBook(book);
     }
 
