@@ -24,8 +24,8 @@ CREATE TABLE `book` (
   `book_name` varchar(50) NOT NULL COMMENT '数据名称',
   `book_count` int(10) NOT NULL COMMENT '书籍数量',
   `detail` varchar(255) NOT NULL COMMENT '书籍描述',
-  `create_time` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
-  `create_user` varchar(32) NOT NULL COMMENT '创建人',
+  `create_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(32) DEFAULT NULL COMMENT '创建人',
   `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
   `update_user` varchar(32) DEFAULT NULL COMMENT '最后更新人',
   PRIMARY KEY (`id`)
