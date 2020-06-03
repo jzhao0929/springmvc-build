@@ -23,17 +23,15 @@
             where id = #{id,jdbcType=VARCHAR}
         </delete>
 
-        <update id="updateById" parameterType="bookPojo" >
+        <update id="updateBook" parameterType="bookPojo" >
             update book
             set
               BOOK_NAME = #{bookName,jdbcType=VARCHAR},
               BOOK_COUNT = #{bookCount,jdbcType=VARCHAR},
               detail = #{detail,jdbcType=VARCHAR},
-              exam_level = #{examLevel,jdbcType=VARCHAR},
-              department_push = #{departmentPush,jdbcType=VARCHAR},
               CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
               CREATE_USER = #{createUser,jdbcType=VARCHAR},
-              UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+              UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
               UPDATE_USER = #{updateUser,jdbcType=VARCHAR}
             where ID = #{id,jdbcType=VARCHAR}
          </update>

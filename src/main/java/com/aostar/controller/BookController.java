@@ -86,8 +86,8 @@ public class BookController {
     }
 
     @RequestMapping("/updateBook")
-    public String updateBook(BookPojo bookPojo){
-        bookService.updateBook(bookPojo);
+    public String updateBook(BookPojo book){
+        bookService.updateBook(book);
         return "redirect:/book/bookList";//重定向到@RequestMapping("/bookList")请求
     }
 

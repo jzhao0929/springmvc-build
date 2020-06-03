@@ -37,8 +37,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public int updateBook(BookPojo bookPojo) {
-        return bookMapper.updateBook(bookPojo);
+    public int updateBook(BookPojo book) {
+        return bookMapper.updateBook(book);
     }
 
     @Override

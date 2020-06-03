@@ -32,12 +32,12 @@ public interface BookMapper {
 
     /**
       * @Description: 更新书籍信息
-      * @params: [bookPojo]
+      * @params: [book]
       * @return: int
-      * @author: 2020-6-1 21:26 jzhao
+      * @author: 2020-6-3 1:21 jzhao
       * @reviser and other massage:
       */
-    int updateBook(BookPojo bookPojo);
+    int updateBook(BookPojo book);
 
     /**
       * @Description: 根据id查询书籍

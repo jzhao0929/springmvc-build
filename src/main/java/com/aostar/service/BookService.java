@@ -38,13 +38,13 @@ public interface BookService {
     int deleteBookById(String id);
 
     /**
-     * @Description: 更新书籍信息
-     * @params: [bookPojo]
-     * @return: int
-     * @author: 2020-6-1 21:26 jzhao
-     * @reviser and other massage:
-     */
-    int updateBook(BookPojo bookPojo);
+      * @Description: 更新书籍信息
+      * @params: [book]
+      * @return: int
+      * @author: 2020-6-3 1:22 jzhao
+      * @reviser and other massage:
+      */
+    int updateBook(BookPojo book);
 
     /**
      * @Description: 根据id查询书籍
