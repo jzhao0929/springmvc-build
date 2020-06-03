@@ -5,9 +5,10 @@ import com.aostar.pojo.BookPojo;
 import java.util.List;
 
 /**
- * @描述：
- * @创建人： 2020-6-1 14:24 企业平台事业部/jzhao1
- */
+ * @Description 书籍业务接口
+ * @Author jzhao
+ * @Date 2020-6-1 18:41
+ **/
 public interface BookService {
 
     /**
