@@ -21,4 +21,12 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    <!--5.拦截器配置-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--该路径下的所有请求-->
+            <mvc:mapping path="/**"/>
+            <bean class="com.aostar.config.Interceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

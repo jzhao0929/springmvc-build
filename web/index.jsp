@@ -23,5 +23,23 @@
 <h3>
   <a href="${pageContext.request.contextPath}/book/bookList" target="_self">进入书籍页面</a>
 </h3>
+
+用户名:<input type="text" id="bookName" onblur="move()">
 </body>
+<script src="${pageContext.request.contextPath}/statics/js/jquery-3.5.1.js"></script>
+<script>
+function move(){
+    $.post({
+        url:"${pageContext.request.contextPath}/book/ajax",
+        data:{"bookName":$("#bookName").val()},
+        success: function (data) {
+          alert(data);
+        },
+        error:function () {
+            
+        }
+    })
+}
+
+</script>
 </html>
